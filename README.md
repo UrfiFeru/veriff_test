@@ -1,7 +1,9 @@
 # veriff_test
 edw_veriff.py - DAG containing ETL process using python and airflow  
 scripts.sql - Create table scripts in datawarehouse db  
-procedure.sql - Contain the actual script to populate dimensions and facts along with the queries to the questions asked.  
+procedure.sql - Contain the actual script to populate dimensions and facts.    
+answers.sql - Contain queries to the questions asked.  
+Veriff_Answers.xlsx - Contain results to the question asked.  
 
 # ETL PROCESS:  
 The ETL process runs on truncate and load methodology for the purpose of simplicity.  
