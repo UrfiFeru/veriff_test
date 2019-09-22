@@ -3,7 +3,7 @@ edw_veriff.py - DAG containing ETL process using python and airflow
 scripts.sql - Create table scripts in datawarehouse db  
 procedure.sql - Contain the actual script to populate dimensions and facts along with the queries to the questions asked.  
 
-# ETL PROCESS:
+# ETL PROCESS:  
 The ETL process runs on truncate and load methodology for the purpose of simplicity.  
 There are 4 tasks written in airflow which moves data from each of the 4 tables from source (veriff) to destination (edw).  
 The 5th task populates the data in the fact and dimension tables and is dependent on the previous 4 tables.  
@@ -11,8 +11,8 @@ This is worth pointing out that when the data increases in the future, it can be
 
 # Data Warehouse Architecture
 
-## Landing Tables:
-The landing tables are:
+## Landing Tables:  
+The landing tables are:  
 Countries_lnd  
 Events_lnd  
 Sessions_lnd  
