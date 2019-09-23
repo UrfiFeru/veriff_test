@@ -4,6 +4,14 @@ scripts.sql - Create table scripts in datawarehouse db
 procedure.sql - Contain the actual script to populate dimensions and facts.    
 answers.sql - Contain queries to the questions asked.  
 Veriff_Answers.xlsx - Contain results to the question asked.  
+Note: The script to build the source database was the same as provided with the test.  
+
+# Environment Setup
+Airflow was installed on Ubuntu v18 on the windows machine.  
+Airflow db is based on Sqlite for the purposes of this project and the webserver is hosted at 8080 port.
+The ETL schedule is set to daily currently.
+PostgreSql was installed locally on the windows machine and was used to connect with airflow through Python.
+PostgreSql connection strings are mentioned in the code as they are being used with psycopg2 instead of PostgresHook.
 
 # ETL PROCESS:  
 The ETL process runs on truncate and load methodology for the purpose of simplicity.  
@@ -41,3 +49,6 @@ Due to limited amount of columns, I thought it was best to implement the modern 
 # Questions
 For the questions which needed to be answered, it is assumed that the statistics are required for both approved and declined statuses and not just only for the approved status.  
 The answers are attached in the excel file veriff_test.xlsx
+
+# Feedback
+Reach me at arsalan-93@hotmail.com or urfi0071 on Skype for any feedback/questions
