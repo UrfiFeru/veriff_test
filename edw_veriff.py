@@ -1,3 +1,7 @@
+# Have not used PostgresHook, so that connection properties to you are visible
+# Have used fixed startdate
+# Have scheduled the workflow for daily
+# Task 5 is dependent on the completion of the 1st 4 tasks, and calls a SP to insert the data into star schema
 from datetime import timedelta
 
 import airflow
@@ -8,13 +12,11 @@ from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 from psycopg2.extras import execute_values
 
-# These args will get passed on to each operator
-# You can override them on a per-task basis during operator initialization
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2019, 9, 21),
+    'start_date': datetime(2019, 9, 29),
     'email': ['airflow@example.com'],
     'email_on_failure': False,
     'email_on_retry': False,
@@ -96,4 +98,4 @@ t5 = PythonOperator(
     python_callable=edw,
     dag=dag)
 
-t5 >> [t1, t2, t3, t4]
+t5 << [t1, t2, t3, t4]
